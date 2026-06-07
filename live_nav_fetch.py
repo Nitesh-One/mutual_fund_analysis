@@ -1,9 +1,17 @@
+"""Fetch latest NAV data for selected mutual fund schemes and save to CSV files.
+
+This module requests NAV data from the mfapi.in API for a default scheme
+and several named schemes, then writes the results to CSV files under
+the data/raw directory.
+"""
+
 import requests
+
 import pandas as pd
 
 url = "https://api.mfapi.in/mf/125497"
 
-response = requests.get(url)
+response = requests.get(url, timeout=10)
 
 data = response.json()
 
@@ -34,7 +42,7 @@ for fund_name, scheme_code in schemes.items():
 
     url = f"https://api.mfapi.in/mf/{scheme_code}"
 
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
 
     data = response.json()
 
@@ -46,7 +54,3 @@ for fund_name, scheme_code in schemes.items():
     )
 
     print(f"Saved {fund_name}_nav.csv")
-
-
-
-

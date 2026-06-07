@@ -1,3 +1,1 @@
-print(fund_master["amfi_code"].head())
-print(fund_master["amfi_code"].dtype)
-print(fund_master["amfi_code"].nunique())
+sip_df.groupby("state")["amount_inr"]

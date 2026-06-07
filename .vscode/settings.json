@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:mutual_fund_analysis}/mutual_fund.db",
+            "name": "mutual_fund"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
