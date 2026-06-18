@@ -1,1 +1,1 @@
-sip_df.groupby("state")["amount_inr"]
+print(returns.columns.tolist())
